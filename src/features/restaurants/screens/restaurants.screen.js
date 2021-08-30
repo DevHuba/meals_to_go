@@ -39,5 +39,3 @@ export const RestaurantsScreen = () => (
     </RestaurantCard>
   </SafeArea>
 );
-
-const styles = StyleSheet.create({});
