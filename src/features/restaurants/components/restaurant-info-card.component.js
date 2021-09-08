@@ -25,12 +25,13 @@ import {
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   let {
-    name = "Some Restorant",
+    name = "Some Paula`s Restaurant",
+    id,
     icon,
     photos = [
       "https://www.2foodtrippers.com/wp-content/uploads/2017/05/Tallinn-Food-Guide-Lieb-Resto-Soup.jpg.webp",
     ],
-    address = "test address",
+    address = "Tammsaare tee 143",
     isOpenNow = false,
     rating = 3,
     isClosedTemporarily = true,
@@ -38,7 +39,6 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
 
   //Fix rating range
   if (rating >= 5) {
-    console.log(rating);
     rating = 5;
   } else if (rating <= 0) {
     rating = 1;
