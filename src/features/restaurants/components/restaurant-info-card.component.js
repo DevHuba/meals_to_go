@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
 
 //Components
@@ -19,7 +18,6 @@ import {
   Info,
   Rating,
   Section,
-  Temporarily,
   SectionEnd,
 } from "./restaurant-info-card.styles";
 
@@ -69,9 +67,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             </Spacer>
             <Spacer position="left" size="large">
               {isOpenNow ? (
-                <SvgXml xml={openIcon} width={20} height={20} />
+                <SvgXml xml={openIcon} width={30} height={30} />
               ) : (
-                <SvgXml xml={closedIcon} width={20} height={20} />
+                <SvgXml xml={closedIcon} width={30} height={30} />
               )}
             </Spacer>
           </SectionEnd>
