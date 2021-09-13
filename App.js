@@ -57,6 +57,7 @@ const createScreenOptions = ({ route }) => {
     ),
     tabBarActiveTintColor: "tomato",
     tabBarInactiveTintColor: "gray",
+    headerShown: false,
   };
 };
 
