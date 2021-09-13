@@ -16,6 +16,7 @@ import {
   RestaurantCardCover,
   Address,
   Info,
+  Icon,
   Rating,
   Section,
   SectionEnd,
@@ -24,8 +25,7 @@ import {
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   let {
     name = "Some Paula`s Restaurant",
-    id,
-    icon,
+    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://www.2foodtrippers.com/wp-content/uploads/2017/05/Tallinn-Food-Guide-Lieb-Resto-Soup.jpg.webp",
     ],
@@ -67,10 +67,13 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             </Spacer>
             <Spacer position="left" size="large">
               {isOpenNow ? (
-                <SvgXml xml={openIcon} width={30} height={30} />
+                <SvgXml xml={openIcon} width={20} height={20} />
               ) : (
-                <SvgXml xml={closedIcon} width={30} height={30} />
+                <SvgXml xml={closedIcon} width={20} height={20} />
               )}
+            </Spacer>
+            <Spacer position="left" size="large">
+              <Icon source={{ uri: icon }} />
             </Spacer>
           </SectionEnd>
         </Section>

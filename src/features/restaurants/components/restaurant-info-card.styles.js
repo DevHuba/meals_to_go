@@ -1,6 +1,11 @@
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
+export const Icon = styled.Image`
+  width: 20px;
+  height: 20px;
+`;
+
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.ui.quaternary};
   margin-bottom: ${(props) => props.theme.space[3]};
