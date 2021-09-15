@@ -40,9 +40,7 @@ export const RestaurantsScreen = () => {
           <Loading size={50} animation={true} color="tomato" />
         </IndicatorView>
       )}
-      <Search>
-        <SearchBar />
-      </Search>
+      <Search />
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
