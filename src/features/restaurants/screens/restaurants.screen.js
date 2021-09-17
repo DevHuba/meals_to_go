@@ -1,20 +1,15 @@
 import React, { useContext } from "react";
 import styled from "styled-components/native";
-import { FlatList, View } from "react-native";
-import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FlatList } from "react-native";
 import { ActivityIndicator, Colors } from "react-native-paper";
-
 //Components
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import SearchBar from "../../../components/SearchBar";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import { Search } from "../components/search.component";
+//Contexts
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 //Styled components
-const Search = styled.View`
-  padding: ${(props) => props.theme.sizes[1]};
-  background-color: ${(props) => props.theme.colors.bg.inverse};
-`;
-
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
 `;
