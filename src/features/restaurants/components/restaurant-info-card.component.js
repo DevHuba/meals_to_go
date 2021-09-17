@@ -29,10 +29,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     photos = [
       "https://www.2foodtrippers.com/wp-content/uploads/2017/05/Tallinn-Food-Guide-Lieb-Resto-Soup.jpg.webp",
     ],
-    address = "Tammsaare tee 143",
+    address = "faik",
     isOpenNow = false,
     rating = 3,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   //Fix rating range
@@ -53,8 +54,14 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml
+                //iteration of unique key using index...Not the best practice...
+                key={`star-${placeId}-${i}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
           </Rating>
           <SectionEnd>
