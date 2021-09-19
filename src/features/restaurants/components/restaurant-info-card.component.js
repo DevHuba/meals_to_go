@@ -30,7 +30,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       "https://www.2foodtrippers.com/wp-content/uploads/2017/05/Tallinn-Food-Guide-Lieb-Resto-Soup.jpg.webp",
     ],
     address = "faik",
-    isOpenNow = false,
+    isOpenNow,
     rating = 3,
     isClosedTemporarily = true,
     placeId,
