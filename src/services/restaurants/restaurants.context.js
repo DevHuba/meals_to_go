@@ -23,10 +23,6 @@ export const RestaurantsContextProvider = ({ children }) => {
         .then((results) => {
           setLoading(false);
           setRestaurants(results);
-          console.log(
-            "🚀 ~ file: restaurants.context.js ~ line 26 ~ .then ~ results",
-            results
-          );
         })
         .catch((err) => {
           setLoading(false);

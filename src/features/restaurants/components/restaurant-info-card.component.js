@@ -24,12 +24,12 @@ import {
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   let {
-    name = "Some Paula`s Restaurant",
+    name = "Mock name",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://www.2foodtrippers.com/wp-content/uploads/2017/05/Tallinn-Food-Guide-Lieb-Resto-Soup.jpg.webp",
     ],
-    address = "faik",
+    address = "Mock address",
     isOpenNow,
     rating = 3,
     isClosedTemporarily = true,
