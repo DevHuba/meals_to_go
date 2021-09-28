@@ -7,7 +7,9 @@ import { SafeArea } from "../../components/utility/safe-area.component";
 //Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+//Screens
 import { RestaurantsNavigator } from "./restaurants.navigation";
+import { MapScreen } from "../../features/map/screens/map.screen";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,21 +41,13 @@ function SettingsScreen() {
   );
 }
 
-function MapScreen() {
-  return (
-    <SafeArea>
-      <Text>MAP!</Text>
-    </SafeArea>
-  );
-}
-
 export const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={createScreenOptions}>
         <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
         <Tab.Screen name="Map" component={MapScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

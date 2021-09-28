@@ -66,5 +66,3 @@ export const RestaurantDetailScreen = ({ route }) => {
     </SafeArea>
   );
 };
-
-// breakfast ,lunch, dinner, drinks
