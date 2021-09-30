@@ -4,5 +4,8 @@
   "terminal.integrated.cwd": "C:\\Users\\Aleks\\Desktop",
   "terminal.integrated.defaultProfile.windows": "C:\\Users\\Aleks\\AppData\\Local\\Programs\\Hyper (migrated)",
   "terminal.integrated.splitCwd": "workspaceRoot",
-  "workbench.tree.indent": 13
+  "workbench.tree.indent": 13,
+
+  //Path Intelisense settings
+  "typescript.suggest.paths": false
 }
