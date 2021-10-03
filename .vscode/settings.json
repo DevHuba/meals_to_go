@@ -7,5 +7,17 @@
   "workbench.tree.indent": 13,
 
   //Path Intelisense settings
-  "typescript.suggest.paths": false
+  "typescript.suggest.paths": false,
+
+  //Relative path settings
+  "relativePath.ignore": [
+    "**/node_modules/**",
+    "**/*.dll",
+    "**/obj/**",
+    "**/objd/**"
+  ],
+  "relativePath.removeExtension": false,
+  //Settings for snippets
+  "editor.tabCompletion": true,
+  "editor.snippetSuggestions": "top"
 }
