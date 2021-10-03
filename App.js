@@ -13,7 +13,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
-import { isRequired } from "react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType";
+// import { isRequired } from "react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType";
 
 export default function App() {
   //Add some custom fonts
