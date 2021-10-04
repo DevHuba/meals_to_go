@@ -23,4 +23,4 @@ export const Favorite = ({ navigation }) => {
   );
 };
 
-//commit 1
+//commit 2
