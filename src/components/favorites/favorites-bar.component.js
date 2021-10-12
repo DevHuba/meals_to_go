@@ -37,3 +37,5 @@ export const FavoritesBar = ({ favorites, onNavigate }) => {
     </FavoritesWrapper>
   );
 };
+
+// test commit
