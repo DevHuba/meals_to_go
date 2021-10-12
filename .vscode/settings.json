@@ -1,0 +1,23 @@
+{
+  "terminal.explorerKind": "external",
+  "terminal.integrated.customGlyphs": false,
+  "terminal.integrated.cwd": "C:\\Users\\Aleks\\Desktop",
+  "terminal.integrated.defaultProfile.windows": "C:\\Users\\Aleks\\AppData\\Local\\Programs\\Hyper (migrated)",
+  "terminal.integrated.splitCwd": "workspaceRoot",
+  "workbench.tree.indent": 13,
+
+  //Path Intelisense settings
+  "typescript.suggest.paths": false,
+
+  //Relative path settings
+  "relativePath.ignore": [
+    "**/node_modules/**",
+    "**/*.dll",
+    "**/obj/**",
+    "**/objd/**"
+  ],
+  "relativePath.removeExtension": false,
+  //Settings for snippets
+  "editor.tabCompletion": true,
+  "editor.snippetSuggestions": "top"
+}
