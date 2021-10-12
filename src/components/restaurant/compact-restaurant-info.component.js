@@ -26,6 +26,7 @@ const isAndroid = Platform.OS === "android";
 
 export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
   //Platform check
+  //check if its MapScreen or not (bug is only on MapScreen)
   const Image = isAndroid && isMap ? CompactWebView : CompactImage;
 
   return (
