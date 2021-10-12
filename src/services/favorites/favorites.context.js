@@ -43,5 +43,3 @@ export const FavoritesContextProvider = ({ children }) => {
     </FavoritesContext.Provider>
   );
 };
-
-//hotfix branch
