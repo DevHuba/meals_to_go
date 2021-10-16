@@ -1,10 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Button } from "react-native-paper";
+
+import {
+  AccountBackground,
+  AccountCover,
+  AccountContainer,
+  AuthButton,
+} from "../components/account.styles";
 
 export const AccountScreen = ({ route, navigation }) => {
-  <View>
-    <Text>AccountScreen</Text>
-  </View>;
+  return (
+    <AccountBackground>
+      <AccountCover />
+      <AccountContainer>
+        <Button
+          icon="login"
+          mode="contained"
+          onPress={() => console.log("Pressed")}
+        >
+          Login
+        </Button>
+      </AccountContainer>
+    </AccountBackground>
+  );
 };
-
-const styles = StyleSheet.create({});
