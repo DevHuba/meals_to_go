@@ -1,26 +1,33 @@
 import React from "react";
-import { Button } from "react-native-paper";
-
 import {
   AccountBackground,
   AccountCover,
-  AccountContainer,
-  AuthButton,
+  MainContainer,
+  MainButton,
 } from "../components/account.styles";
+import { Spacer } from "../../../components/spacer/spacer.components";
 
-export const AccountScreen = ({ route, navigation }) => {
+export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <AccountContainer>
-        <Button
+      <MainContainer>
+        <MainButton
           icon="login"
           mode="contained"
-          onPress={() => console.log("Pressed")}
+          onPress={() => navigation.navigate("Login")}
         >
           Login
-        </Button>
-      </AccountContainer>
+        </MainButton>
+        <Spacer size="large" />
+        <MainButton
+          icon="card-account-details"
+          mode="contained"
+          onPress={() => navigation.navigate("Register")}
+        >
+          Register
+        </MainButton>
+      </MainContainer>
     </AccountBackground>
   );
 };
