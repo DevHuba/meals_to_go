@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect, useFocusEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import MapView from "react-native-maps";
 import styled from "styled-components/native";
-import { BackHandler } from "react-native";
+import { View } from "react-native";
 
 //Components
 import { Search } from "../components/search.component";
@@ -16,7 +16,7 @@ const Map = styled(MapView)`
   width: 100%;
 `;
 
-export const MapScreen = ({ navigation, route }) => {
+export const MapScreen = () => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -29,8 +29,6 @@ export const MapScreen = ({ navigation, route }) => {
 
     setLatDelta(northeastLat - southwestLat);
   }, [location, viewport]);
-
-  // TODO: for better UX need to go back into MapScreen from DetailScreen after clicking restaurant on MapScreen
 
   return (
     <>
@@ -53,11 +51,7 @@ export const MapScreen = ({ navigation, route }) => {
                 longitude: restaurant.geometry.location.lng,
               }}
             >
-              <MapView.Callout
-                onPress={() =>
-                  navigation.navigate("RestaurantDetailScreen", { restaurant })
-                }
-              >
+              <MapView.Callout>
                 <MapCallout restaurant={restaurant} />
               </MapView.Callout>
             </MapView.Marker>
