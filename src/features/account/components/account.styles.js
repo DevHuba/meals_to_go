@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 import { Button, TextInput } from "react-native-paper";
 import { colors } from "../../../infrastructure/theme/colors";
+import { Text } from "../../../components/typography/text.component";
 
 export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../../assets/bg-image.jpg"),
+  source: require("../../../../assets/1.jpg"),
 })`
   flex: 1;
   align-items: center;
@@ -16,6 +17,15 @@ export const AccountCover = styled.View`
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 `;
+
+export const Title = styled(Text)`
+  font-size: 60px;
+  color: black;
+`;
+
+export const BackButton = styled(Button).attrs({
+  color: colors.brand.primary,
+})``;
 
 //Main screen style
 export const MainContainer = styled.View`
@@ -39,6 +49,12 @@ export const LoginContainer = styled.View`
   margin-top: ${(props) => props.theme.space[2]};
 `;
 
+export const ErrorContainer = styled.View`
+  max-width: 300px;
+  align-items: center;
+  align-self: center;
+`;
+
 export const LoginButton = styled(Button).attrs({
   color: colors.brand.primary,
 })``;
@@ -56,3 +72,7 @@ export const RegisterContainer = styled.View`
   padding: ${(props) => props.theme.space[4]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
+
+export const RegisterButton = styled(Button).attrs({
+  color: colors.brand.primary,
+})``;
