@@ -11,6 +11,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RestaurantsNavigator } from "./restaurants.navigation";
 import { MapScreen } from "../../features/map/screens/map.screen";
 //Contexts
+import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
+import { LocationContextProvider } from "../../services/location/location.context";
+import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
 import { AuthenticationContext } from "../../services/authentication/authentication.context";
 
 const Tab = createBottomTabNavigator();
@@ -36,17 +39,13 @@ const createScreenOptions = ({ route }) => {
 };
 
 function SettingsScreen() {
+  //Use context for logOut
   const { onLogOut } = useContext(AuthenticationContext);
 
   return (
     <SafeArea>
       <Text>SETTINGS!</Text>
-      <Button
-        title="logout"
-        onPress={() => {
-          onLogOut();
-        }}
-      ></Button>
+      <Button title="logout" onPress={() => onLogOut()}></Button>
     </SafeArea>
   );
 }
@@ -54,11 +53,17 @@ function SettingsScreen() {
 export const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={createScreenOptions}>
-        <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-        <Tab.Screen name="Map" component={MapScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
+      <FavoritesContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <Tab.Navigator screenOptions={createScreenOptions}>
+              <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+              <Tab.Screen name="Map" component={MapScreen} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+            </Tab.Navigator>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
+      </FavoritesContextProvider>
     </NavigationContainer>
   );
 };
