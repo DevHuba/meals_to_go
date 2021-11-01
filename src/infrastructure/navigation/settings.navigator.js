@@ -2,6 +2,7 @@ import React from "react";
 import {
   createStackNavigator,
   CardStyleInterpolators,
+  TransitionPresets,
 } from "@react-navigation/stack";
 
 import { SettingsScreen } from "../../features/settings/screens/settings.screen";
@@ -13,8 +14,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
     <SettingsStack.Navigator>
       <SettingsStack.Group
         screenOptions={{
-            headerMode="screen",
-            headerShown: false,
+          headerShown: false,
           ...TransitionPresets.ModalPresentationIOS,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}
@@ -23,10 +23,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
           name="SettingsScreen"
           component={SettingsScreen}
         />
-        <SettingsStack.Screen
-          name="Favorites"
-          component={() => null}
-        />
+        <SettingsStack.Screen name="Favorites" component={() => null} />
       </SettingsStack.Group>
     </SettingsStack.Navigator>
   );
