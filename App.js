@@ -15,7 +15,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
-// here must be your firebase config
+//fb config
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
