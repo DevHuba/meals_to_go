@@ -4,6 +4,7 @@ import { TouchableOpacity, FlatList } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 //Components
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { FadeInView } from "../../../components/animations/fade.animation";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { Search } from "../components/search.component";
 import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
@@ -58,7 +59,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                 })
               }
             >
-              <RestaurantInfoCard restaurant={item} />
+              <FadeInView>
+                <RestaurantInfoCard restaurant={item} />
+              </FadeInView>
             </TouchableOpacity>
           );
         }}
