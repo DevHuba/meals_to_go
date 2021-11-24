@@ -5,6 +5,7 @@ import { Navigation } from "./src/infrastructure/navigation/index";
 
 import { firebase } from "@firebase/app";
 import "@firebase/auth";
+import { firebaseConfig } from "./src/secrets/secrets";
 
 //Add custom fonts using expo google fonts
 import {
@@ -15,7 +16,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
-//fb config
+//Add fb config
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
