@@ -15,14 +15,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCTxuJ0ItZjEuFhvsnQGgrTMbasPOb7nKI",
-  authDomain: "mealstogo-49114.firebaseapp.com",
-  projectId: "mealstogo-49114",
-  storageBucket: "mealstogo-49114.appspot.com",
-  messagingSenderId: "621701871950",
-  appId: "1:621701871950:web:54872b33ba00d4ac2bc61f",
-};
+//Add fb config
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
