@@ -24,9 +24,10 @@ const Item = styled.View`
 //Save one platform
 const isAndroid = Platform.OS === "android";
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
   //Platform check
-  const Image = isAndroid ? CompactWebView : CompactImage;
+  //check if its MapScreen or not (bug is only on MapScreen)
+  const Image = isAndroid && isMap ? CompactWebView : CompactImage;
 
   return (
     <Item>

@@ -55,3 +55,7 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+firebase-debug.log
+ui-debug.log
+.runtimeconfig.json
+secrets/
