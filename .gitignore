@@ -72,3 +72,4 @@ ui-debug.log
 .runtimeconfig.json
 secrets/
 
+src/utils/env.js
