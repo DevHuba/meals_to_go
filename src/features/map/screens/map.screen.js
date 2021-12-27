@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import MapView from "react-native-maps";
 import styled from "styled-components/native";
-import { View } from "react-native";
 
 //Components
 import { Search } from "../components/search.component";

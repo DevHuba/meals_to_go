@@ -5,6 +5,10 @@ module.exports.placesRequest = (request, response) => {
   const data = mocks[location];
   if (data) {
     data.results = data.results.map(addMockImage);
+    response.json(data);
+    return;
   }
   response.json(data);
 };
+
+// response.status(404).end();

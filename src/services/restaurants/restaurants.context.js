@@ -12,20 +12,26 @@ export const RestaurantsContextProvider = ({ children }) => {
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { location } = useContext(LocationContext);
-
+  //+
   const retrieveRestaurants = (loc) => {
     setLoading(true);
     setRestaurants([]);
 
     restautantsRequest(loc)
-      .then(restaurantsTransform)
+      .then(restaurantsTransform(loc))
+      .then((json) => {
+        console.log("RESTAURANT_REQUEST AND TRANSFORM RESULT : ", json);
+        return restaurantsTransform(json);
+      })
       .then((results) => {
         setLoading(false);
+        console.log("TRANSFORM 2 : ", results);
         setRestaurants(results);
       })
       .catch((err) => {
         setLoading(false);
         setError(err);
+        console.error("catch error restautantsRequest : ", err);
       });
   };
 

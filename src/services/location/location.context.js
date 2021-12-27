@@ -23,13 +23,14 @@ export const LocationContextProvider = ({ children }) => {
     locationRequest(keyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
+        console.log("LOCATIONS", result);
         setLoading(false);
         setLocation(result);
       })
       .catch((err) => {
         setLoading(false);
         setError(err);
-        console.log(err);
+        console.log("in locationReguest", err);
       });
   }, [keyword]);
 

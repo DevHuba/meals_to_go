@@ -2,9 +2,13 @@ import camelize from "camelize";
 import { host } from "../../utils/env";
 
 export const restautantsRequest = (location) => {
-  return fetch(`${host}/placesNearby?location=${location}`).then((res) => {
-    return res.json();
-  });
+  const url = `${host}/placesNearby?location=${location}`;
+  console.log("placesURL : ", url);
+  return fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .catch(console.error);
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
@@ -18,3 +22,7 @@ export const restaurantsTransform = ({ results = [] }) => {
   });
   return camelize(mappedResults);
 };
+
+// then((res) => {
+//   console.log("res", res);
+//   return res.json();

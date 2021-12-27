@@ -6,8 +6,8 @@ const { Client } = require("@googlemaps/google-maps-services-js");
 
 const client = new Client({});
 
-exports.geocode = functions.https.onRequest((request, response) => {
-  geocodeRequest(request, response, client);
+exports.geocode = functions.https.onRequest((req, res) => {
+  geocodeRequest(req, res, client);
 });
 
 exports.placesNearby = functions.https.onRequest((request, response) => {
