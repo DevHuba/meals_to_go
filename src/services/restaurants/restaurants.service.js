@@ -2,6 +2,7 @@ import camelize from "camelize";
 import { host } from "../../utils/env";
 
 export const restautantsRequest = (location) => {
+  //TODO : Add "&mock=true" after searchTerm for using of mock data
   const url = `${host}/placesNearby?location=${location}`;
   console.log("placesURL : ", url);
   return fetch(url)
@@ -12,6 +13,7 @@ export const restautantsRequest = (location) => {
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
+  console.log("RESULT IN TRANSFORM : ", results);
   const mappedResults = results.map((restaurant) => {
     return {
       ...restaurant,
