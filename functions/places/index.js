@@ -19,6 +19,7 @@ const addGoogleImage = (restaurant) => {
 };
 
 module.exports.placesRequest = (req, res, client) => {
+  //Search for keywords in query link
   const { location, mock } = req.query;
 
   if (mock === "true") {
