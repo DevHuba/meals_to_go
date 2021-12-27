@@ -16,13 +16,9 @@ export const RestaurantsContextProvider = ({ children }) => {
   const retrieveRestaurants = (loc) => {
     setLoading(true);
     setRestaurants([]);
-
-    console.log("LOC : ", loc);
-
     restautantsRequest(loc)
       .then(restaurantsTransform(loc))
       .then((json) => {
-        // console.log("RESTAURANT_REQUEST AND TRANSFORM RESULT : ", json);
         return restaurantsTransform(json);
       })
       .then((results) => {

@@ -4,9 +4,6 @@ const functions = require("firebase-functions");
 module.exports.geocodeRequest = (req, res, client) => {
   const { city, mock } = req.query;
 
-  console.log("GOOGLE FUNCTIONS KEYS : ", functions.config());
-  console.log("MOCK : ", mock);
-
   if (mock === "true") {
     // Query mock city search
     const locationMockLower = locationsMock[city.toLowerCase()];

@@ -4,7 +4,6 @@ import { host } from "../../utils/env";
 export const restautantsRequest = (location) => {
   //TODO : Add "&mock=true" after searchTerm for using of mock data
   const url = `${host}/placesNearby?location=${location}`;
-  console.log("placesURL : ", url);
   return fetch(url)
     .then((res) => {
       return res.json();
@@ -13,7 +12,6 @@ export const restautantsRequest = (location) => {
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
-  console.log("RESULT IN TRANSFORM : ", results);
   const mappedResults = results.map((restaurant) => {
     return {
       ...restaurant,
@@ -24,7 +22,3 @@ export const restaurantsTransform = ({ results = [] }) => {
   });
   return camelize(mappedResults);
 };
-
-// then((res) => {
-//   console.log("res", res);
-//   return res.json();
