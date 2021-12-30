@@ -73,3 +73,8 @@ ui-debug.log
 secrets/
 
 src/utils/env.js
+functions/.expo/settings.json
+functions/package-lock.json
+.expo/packager-info.json
+.expo/packager-info.json
+functions/.expo/packager-info.json
