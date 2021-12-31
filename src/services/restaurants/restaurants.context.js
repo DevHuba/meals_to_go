@@ -16,19 +16,20 @@ export const RestaurantsContextProvider = ({ children }) => {
   const retrieveRestaurants = (loc) => {
     setLoading(true);
     setRestaurants([]);
-
-    setTimeout(() => {
-      restautantsRequest(loc)
-        .then(restaurantsTransform)
-        .then((results) => {
-          setLoading(false);
-          setRestaurants(results);
-        })
-        .catch((err) => {
-          setLoading(false);
-          setError(err);
-        });
-    }, 2000);
+    restautantsRequest(loc)
+      .then(restaurantsTransform(loc))
+      .then((json) => {
+        return restaurantsTransform(json);
+      })
+      .then((results) => {
+        setLoading(false);
+        setRestaurants(results);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(err);
+        console.error("catch error restautantsRequest : ", err);
+      });
   };
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-export const locations = {
+module.exports.locations = {
   antwerp: {
     results: [
       {
@@ -64,6 +64,28 @@ export const locations = {
           location: {
             lng: -79.383186,
             lat: 43.653225,
+          },
+          viewport: {
+            northeast: {
+              lat: 43.64794098029149,
+              lng: -79.37325551970848,
+            },
+            southwest: {
+              lat: 43.6452430197085,
+              lng: -79.37595348029149,
+            },
+          },
+        },
+      },
+    ],
+  },
+  tallinn: {
+    results: [
+      {
+        geometry: {
+          location: {
+            lng: -87.629799,
+            lat: 41.878113,
           },
           viewport: {
             northeast: {

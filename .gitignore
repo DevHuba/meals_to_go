@@ -55,7 +55,32 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+<<<<<<< HEAD
+=======
+
+# Folders
+secrets/
+
+# Files
+firebase-debug.log
+ui-debug.log
+.runtimeconfig.json
+ngrok.exe
+
+*/node_modules/**/*
+
+>>>>>>> google_api_integration
 firebase-debug.log
 ui-debug.log
 .runtimeconfig.json
 secrets/
+<<<<<<< HEAD
+=======
+
+src/utils/env.js
+functions/.expo/settings.json
+functions/package-lock.json
+.expo/packager-info.json
+.expo/packager-info.json
+functions/.expo/packager-info.json
+>>>>>>> google_api_integration
