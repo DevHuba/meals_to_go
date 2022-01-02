@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { TouchableOpacity, FlatList } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 //Components
+import { Text } from "../../../components/typography/text.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { FadeInView } from "../../../components/animations/fade.animation";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -10,8 +11,10 @@ import { Search } from "../components/search.component";
 import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
 
 //Contexts
+import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
+import { Spacer } from "../../../components/spacer/spacer.components";
 
 //Styled components
 const Loading = styled(ActivityIndicator)`
@@ -30,9 +33,15 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const RestaurantsScreen = ({ navigation }) => {
-  const { restaurants, isLoading } = useContext(RestaurantsContext);
+  const { error: locationError } = useContext(LocationContext);
+  const {
+    restaurants,
+    isLoading,
+    error: restaurantsError,
+  } = useContext(RestaurantsContext);
   const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
+  const hasError = !!locationError || !!restaurantsError;
 
   return (
     <SafeArea>
@@ -47,6 +56,14 @@ export const RestaurantsScreen = ({ navigation }) => {
       />
       {isToggled && (
         <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />
+      )}
+      {hasError && (
+        <Spacer position="left" size="large">
+          <Text variant="error">
+            Something went wrong retrieving the data (locationRequest or
+            restaurantsRequest).
+          </Text>
+        </Spacer>
       )}
       <RestaurantList
         data={restaurants}

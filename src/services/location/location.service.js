@@ -1,11 +1,13 @@
 import camelize from "camelize";
-import { host } from "../../utils/env";
+import { host, isMock } from "../../utils/env";
 
 export const locationRequest = (searchTerm) => {
   //TODO : Add "&mock=true" after searchTerm for using of mock data
-  return fetch(`${host}/geocode?city=${searchTerm}`).then((res) => {
-    return res.json();
-  });
+  return fetch(`${host}/geocode?city=${searchTerm}&mock=${isMock}`).then(
+    (res) => {
+      return res.json();
+    }
+  );
 };
 
 export const locationTransform = (result) => {
