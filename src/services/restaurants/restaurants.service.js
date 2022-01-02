@@ -1,9 +1,9 @@
 import camelize from "camelize";
-import { host } from "../../utils/env";
+import { host, isMock } from "../../utils/env";
 
 export const restautantsRequest = (location) => {
   //TODO : Add "&mock=true" after searchTerm for using of mock data
-  const url = `${host}/placesNearby?location=${location}`;
+  const url = `${host}/placesNearby?location=${location}&mock=${isMock}`;
   return fetch(url)
     .then((res) => {
       return res.json();

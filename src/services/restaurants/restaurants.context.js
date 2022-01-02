@@ -22,13 +22,13 @@ export const RestaurantsContextProvider = ({ children }) => {
         return restaurantsTransform(json);
       })
       .then((results) => {
+        setError(false);
         setLoading(false);
         setRestaurants(results);
       })
       .catch((err) => {
         setLoading(false);
         setError(err);
-        console.error("catch error restautantsRequest : ", err);
       });
   };
 

@@ -16,15 +16,6 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//Add fb config
-=======
-//fb config here
->>>>>>> 62803521096a6a4b44aef47ab3b56b2666cdb812
-
-=======
->>>>>>> google_api_integration
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
