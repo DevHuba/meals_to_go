@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";
-
+//Styles
+import { OrderButton } from "../components/restaurant-info-card.styles";
+//Components
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { Spacer } from "../../../components/spacer/spacer.components";
+//Contexts
+import { CartContext } from "../../../services/cart/cart.context";
 
-export const RestaurantDetailScreen = ({ route }) => {
+export const RestaurantDetailScreen = ({ route, navigation }) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
   const [lunchExpanded, setLunchExpanded] = useState(false);
   const [dinnerExpanded, setDinnerExpanded] = useState(false);
   const [drinksExpanded, setDrinksExpanded] = useState(false);
 
   const { restaurant } = route.params;
+  const { addToCart } = useContext(CartContext);
 
   return (
     <SafeArea>
@@ -63,6 +69,20 @@ export const RestaurantDetailScreen = ({ route }) => {
           <List.Item title="Fanta" />
         </List.Accordion>
       </ScrollView>
+      <Spacer position="bottom" size="large">
+        <OrderButton
+          mode="contained"
+          icon="cash-register"
+          onPress={() => {
+            addToCart({ item: "special", price: 1299 }, restaurant);
+            navigation.navigate("Checkout");
+          }}
+        >
+          Order special only 12.99
+        </OrderButton>
+      </Spacer>
     </SafeArea>
   );
 };
+
+//Price in onPress is figured by Stripe. Requires that format for right rounding.
