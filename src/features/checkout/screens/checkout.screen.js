@@ -11,16 +11,48 @@ import {
   CartIconContainer,
   CartIcon,
   NameInput,
+  PayButton,
+  ClearButton,
+  PaymentProcessing,
 } from "../components/checkout.styles";
 
 //Contexts
 import { CartContext } from "../../../services/cart/cart.context";
 import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 
-export const CheckoutScreen = () => {
-  const { cart, restaurant, sum } = useContext(CartContext);
-  const [name, setName] = useState("");
+//Services
+import { payRequest } from "../../../services/checkout/checkout.service";
 
+export const CheckoutScreen = ({ navigation }) => {
+  const { cart, restaurant, sum, clearCart } = useContext(CartContext);
+  const [name, setName] = useState("");
+  const [card, setCard] = useState(null);
+  const [isLoading, setLoading] = useState(false);
+
+  const onPay = () => {
+    setLoading(true);
+    if (!card || !card.id) {
+      navigation.navigate("CheckoutErrorScreen", {
+        error: "Please fill in a valid credit card",
+      });
+      setLoading(false);
+      return;
+    }
+    payRequest(card.id, sum, name)
+      .then((result) => {
+        setLoading(false);
+        clearCart();
+        navigation.navigate("CheckoutSuccessScreen");
+      })
+      .catch((err) => {
+        setLoading(false);
+        navigation.navigate("CheckoutErrorScreen", {
+          error: err,
+        });
+      });
+  };
+
+  // Empty cart
   if (!cart.length || !restaurant) {
     return (
       <SafeArea>
@@ -37,6 +69,7 @@ export const CheckoutScreen = () => {
   return (
     <SafeArea>
       <RestaurantInfoCard restaurant={restaurant} />
+      {isLoading && <PaymentProcessing />}
       <ScrollView>
         <Spacer position="left" size="large">
           <Text>Your Order</Text>
@@ -57,8 +90,28 @@ export const CheckoutScreen = () => {
           />
         </Spacer>
         <Spacer position="top" size="medium">
-          {name.length > 0 && <CreditCardComponent name={name} />}
+          {name.length > 0 && (
+            <CreditCardComponent name={name} onSuccess={setCard} />
+          )}
         </Spacer>
+        <Spacer position="top" size="xxl" />
+        <PayButton
+          disabled={isLoading}
+          icon="account-check"
+          mode="contained"
+          onPress={onPay}
+        >
+          Pay
+        </PayButton>
+        <Spacer position="top" size="large" />
+        <ClearButton
+          disabled={isLoading}
+          icon="cart-off"
+          mode="contained"
+          onPress={clearCart}
+        >
+          Clear cart
+        </ClearButton>
       </ScrollView>
     </SafeArea>
   );
