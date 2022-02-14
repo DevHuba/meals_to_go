@@ -16,7 +16,8 @@
     "@googlemaps/google-maps-services-js": "^3.3.5",
     "firebase-admin": "^10.0.1",
     "firebase-functions": "^3.16.0",
-    "har-validator": "^5.1.5"
+    "har-validator": "^5.1.5",
+    "stripe": "^8.202.0"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"

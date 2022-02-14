@@ -7,5 +7,6 @@
   "workbench.tree.indent": 13,
 
   //Path Intelisense settings
-  "typescript.suggest.paths": false
+  "typescript.suggest.paths": false,
+  "coderadio.vlc_path": "C:\\Program Files\\VideoLAN\\VLC\\vlc"
 }
