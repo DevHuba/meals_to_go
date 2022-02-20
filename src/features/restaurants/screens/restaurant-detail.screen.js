@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { List } from "react-native-paper";
+import { List, Divider } from "react-native-paper";
 import { ScrollView } from "react-native";
 //Styles
 import { OrderButton } from "../components/restaurant-info-card.styles";
@@ -26,76 +26,160 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
       <ScrollView>
         <List.Accordion
           title="Breakfast"
-          titleStyle={{ color: colors.brand.primary }}
+          titleStyle={{
+            color: breakfastExpanded
+              ? colors.brand.primary
+              : colors.ui.secondary,
+          }}
           left={(props) => (
             <List.Icon
               {...props}
               icon="white-balance-sunny"
-              color={colors.brand.primary}
+              color={
+                breakfastExpanded ? colors.brand.primary : colors.ui.secondary
+              }
             />
           )}
           expanded={breakfastExpanded}
           onPress={() => setBreakfastExpanded(!breakfastExpanded)}
         >
-          <List.Item title="Breakfast Burrito" />
-          <List.Item title="Belgian Style Waffles" />
-          <List.Item title="Cinnamon Rolls" />
-          <List.Item title="Bagel with Cream Cheese" />
+          <List.Item
+            title="Breakfast Burrito"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Belgian Style Waffles"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Cinnamon Rolls"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Bagel with Cream Cheese"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
         </List.Accordion>
+        <Divider />
         <List.Accordion
           title="Lunch"
-          titleStyle={{ color: colors.brand.primary }}
+          titleStyle={{
+            color: lunchExpanded ? colors.brand.primary : colors.ui.secondary,
+          }}
           left={(props) => (
             <List.Icon
               {...props}
               icon="hamburger"
-              color={colors.brand.primary}
+              color={lunchExpanded ? colors.brand.primary : colors.ui.secondary}
             />
           )}
           expanded={lunchExpanded}
           onPress={() => setLunchExpanded(!lunchExpanded)}
         >
-          <List.Item title="Buddha Bowl" />
-          <List.Item title="Burrito Bowl" />
-          <List.Item title="Chicken and Asparagus Lemon Stir-Fry" />
-          <List.Item title="Kale, Spinach, and Pear Smoothie" />
+          <List.Item
+            title="Buddha Bowl"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Burrito Bowl"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Chicken and Asparagus Lemon Stir-Fry"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Kale, Spinach, and Pear Smoothie"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
         </List.Accordion>
+        <Divider />
         <List.Accordion
           title="Dinner"
-          titleStyle={{ color: colors.brand.primary }}
+          titleStyle={{
+            color: dinnerExpanded ? colors.brand.primary : colors.ui.secondary,
+          }}
           left={(props) => (
             <List.Icon
               {...props}
               icon="food-variant"
-              color={colors.brand.primary}
+              color={
+                dinnerExpanded ? colors.brand.primary : colors.ui.secondary
+              }
             />
           )}
           expanded={dinnerExpanded}
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
-          <List.Item title="Hard tacos or tostadas" />
-          <List.Item title="Huevos rancheros" />
-          <List.Item title="Stir fry" />
-          <List.Item title="Meatballs and rice" />
+          <List.Item
+            title="Hard tacos or tostadas"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Huevos rancheros"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Stir fry"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Meatballs and rice"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
         </List.Accordion>
+        <Divider />
+
         <List.Accordion
           title="Drinks"
-          titleStyle={{ color: colors.brand.primary }}
+          titleStyle={{
+            color: drinksExpanded ? colors.brand.primary : colors.ui.secondary,
+          }}
           left={(props) => (
             <List.Icon
               {...props}
               icon="bottle-wine"
-              color={colors.brand.primary}
+              color={
+                drinksExpanded ? colors.brand.primary : colors.ui.secondary
+              }
             />
           )}
           expanded={drinksExpanded}
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >
-          <List.Item title="Coffee" />
-          <List.Item title="Tea" />
-          <List.Item title="Sprite" />
-          <List.Item title="Coke" />
-          <List.Item title="Fanta" />
+          <List.Item
+            title="Coffee"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Tea"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Sprite"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Coke"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
+          <Divider />
+          <List.Item
+            title="Fanta"
+            titleStyle={{ color: colors.brand.secondary }}
+          />
         </List.Accordion>
       </ScrollView>
       <Spacer position="bottom" size="large">

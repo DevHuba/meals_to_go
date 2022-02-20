@@ -16,6 +16,8 @@ export const OrderButton = styled(Button).attrs({
 `;
 
 export const RestaurantCard = styled(Card)`
+  width: 95%;
+  align-self: center;
   background-color: ${(props) => props.theme.colors.ui.quaternary};
   margin-bottom: ${(props) => props.theme.space[3]};
 `;
