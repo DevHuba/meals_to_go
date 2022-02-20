@@ -9,6 +9,7 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.components";
 //Contexts
 import { CartContext } from "../../../services/cart/cart.context";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const RestaurantDetailScreen = ({ route, navigation }) => {
   const [breakfastExpanded, setBreakfastExpanded] = useState(false);
@@ -25,7 +26,14 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
       <ScrollView>
         <List.Accordion
           title="Breakfast"
-          left={(props) => <List.Icon {...props} icon="white-balance-sunny" />}
+          titleStyle={{ color: colors.brand.primary }}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="white-balance-sunny"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={breakfastExpanded}
           onPress={() => setBreakfastExpanded(!breakfastExpanded)}
         >
@@ -36,7 +44,14 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
         </List.Accordion>
         <List.Accordion
           title="Lunch"
-          left={(props) => <List.Icon {...props} icon="hamburger" />}
+          titleStyle={{ color: colors.brand.primary }}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="hamburger"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={lunchExpanded}
           onPress={() => setLunchExpanded(!lunchExpanded)}
         >
@@ -47,7 +62,14 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
         </List.Accordion>
         <List.Accordion
           title="Dinner"
-          left={(props) => <List.Icon {...props} icon="food-variant" />}
+          titleStyle={{ color: colors.brand.primary }}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="food-variant"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={dinnerExpanded}
           onPress={() => setDinnerExpanded(!dinnerExpanded)}
         >
@@ -58,7 +80,14 @@ export const RestaurantDetailScreen = ({ route, navigation }) => {
         </List.Accordion>
         <List.Accordion
           title="Drinks"
-          left={(props) => <List.Icon {...props} icon="bottle-wine" />}
+          titleStyle={{ color: colors.brand.primary }}
+          left={(props) => (
+            <List.Icon
+              {...props}
+              icon="bottle-wine"
+              color={colors.brand.primary}
+            />
+          )}
           expanded={drinksExpanded}
           onPress={() => setDrinksExpanded(!drinksExpanded)}
         >

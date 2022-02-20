@@ -39,7 +39,7 @@ export const CheckoutScreen = ({ navigation }) => {
       return;
     }
     payRequest(card.id, sum, name)
-      .then((result) => {
+      .then(() => {
         setLoading(false);
         clearCart();
         navigation.navigate("CheckoutSuccessScreen");

@@ -14,6 +14,8 @@ import { CartContextProvider } from "../../services/cart/cart.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
+//Theme
+import { colors } from "../theme/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,8 +34,8 @@ const createScreenOptions = ({ route }) => {
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
     ),
-    tabBarActiveTintColor: "tomato",
-    tabBarInactiveTintColor: "gray",
+    tabBarActiveTintColor: colors.brand.primary,
+    tabBarInactiveTintColor: colors.brand.muted,
     headerShown: false,
   };
 };

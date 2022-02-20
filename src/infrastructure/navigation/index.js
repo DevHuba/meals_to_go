@@ -4,10 +4,11 @@ import { AppNavigator } from "./app.navigator";
 import { AccountNavigator } from "./account.navigator";
 
 export const Navigation = () => {
-  // TODO : Uncomment that line for production...
-  // const { isAuthenticated } = useContext(AuthenticationContext);
-
   // variable for local development
-  const isAuthenticated = true;
+  // const isAuthenticated = true;
+
+  // TODO : Uncomment that line for production...
+  const { isAuthenticated } = useContext(AuthenticationContext);
+
   return isAuthenticated ? <AppNavigator /> : <AccountNavigator />;
 };

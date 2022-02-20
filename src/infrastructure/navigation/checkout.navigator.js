@@ -12,7 +12,7 @@ import { CheckoutSuccessScreen } from "../../features/checkout/screens/checkout-
 
 const CheckoutStack = createStackNavigator();
 
-export const CheckoutNavigator = ({ route, navigation }) => {
+export const CheckoutNavigator = () => {
   return (
     <CheckoutStack.Navigator>
       <CheckoutStack.Group
